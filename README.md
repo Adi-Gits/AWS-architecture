@@ -199,24 +199,6 @@ The source project is a hands-on lab. For production, improve it by:
 - Apache2
 - AWS architecture troubleshooting
 
-## Interview Explanation
-
-> I designed and implemented a highly available AWS web architecture across two Availability Zones. I created a VPC with separate public and private subnets, configured NAT Gateways for private-subnet outbound connectivity, and added an S3 Gateway Endpoint. The application layer uses an EC2 Launch Template and Auto Scaling Group with a desired capacity of two and target tracking based on CPU utilization. An internet-facing Application Load Balancer distributes HTTP traffic to the EC2 instances through a Target Group with health checks. For administration, I used a Bastion Host to access the private instance and installed Apache2. Finally, I validated the architecture using the ALB DNS name and confirmed the Apache2 default page was accessible.
-
-## Recommended GitHub Structure
-
-```text
-aws-high-availability-web-architecture/
-├── README.md
-├── docs/
-│   ├── AWS_Architecture_Project_Guide.pdf
-│   └── screenshots/
-└── terraform/
-    └── README.md
-```
-
-If you later add Terraform, keep networking, security, compute and load-balancing resources modular rather than placing the complete architecture in one `main.tf`.
-
 ## Future Improvements
 
 - Terraform modules
